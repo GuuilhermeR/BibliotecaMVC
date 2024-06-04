@@ -18,9 +18,9 @@ namespace BibliotecaController
 
         protected abstract string GetSQL();
 
-        protected abstract string Salvar();
+        protected abstract string Salvar(BibliotecaView.Views.Pessoa.Pessoa pessoa);
 
-        protected abstract string Excluir();
+        protected abstract string Excluir(BibliotecaView.Views.Pessoa.Pessoa pessoa);
 
         protected abstract T CriarObjeto(SqlDataReader reader);
 
