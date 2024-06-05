@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaModel", "Bibliote
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaController", "BibliotecaController\BibliotecaController.csproj", "{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaDAO", "BibliotecaDAO\BibliotecaDAO.csproj", "{535492E2-E979-4A68-AAD6-2DD58DED1129}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535492E2-E979-4A68-AAD6-2DD58DED1129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535492E2-E979-4A68-AAD6-2DD58DED1129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535492E2-E979-4A68-AAD6-2DD58DED1129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535492E2-E979-4A68-AAD6-2DD58DED1129}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

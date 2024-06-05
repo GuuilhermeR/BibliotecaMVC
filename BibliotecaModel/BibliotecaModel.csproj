@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Pessoa\Pessoa.cs" />
+    <Compile Include="Filters\Pessoa\PessoaFilter.cs" />
+    <Compile Include="Models\Pessoa\PessoaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
