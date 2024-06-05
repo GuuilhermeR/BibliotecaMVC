@@ -9,7 +9,6 @@ namespace BibliotecaController
 {
     public interface IDAO <T, F> where T : class
     {
-        string Conexao { get; set; }
 
         string GetSQL(T obj, F filtro);
 
