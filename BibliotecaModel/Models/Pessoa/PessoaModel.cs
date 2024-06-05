@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaView.Views.Pessoa
 {
-    public class Pessoa
+    public class PessoaModel
     {
         private readonly string _nome;
         private readonly string _sobrenome;
@@ -87,9 +87,9 @@ namespace BibliotecaView.Views.Pessoa
             } 
         }
 
-        public Pessoa() { }
+        public PessoaModel() { }
 
-        public Pessoa(string nome, string sobrenome, string cpf, string endereco, DateTime dataCadastro, int numero, string cidade, string estado, string bairro, string telefone, DateTime dataNascimento)
+        public PessoaModel(string nome, string sobrenome, string cpf, string endereco, DateTime dataCadastro, int numero, string cidade, string estado, string bairro, string telefone, DateTime dataNascimento)
         {
             _nome = nome;
             _sobrenome = sobrenome;

@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaController
+namespace BibliotecaDAO
 {
     public interface IDAO <T, F> where T : class
     {
-
         string GetSQL(T obj, F filtro);
 
         string Salvar(T obj);
