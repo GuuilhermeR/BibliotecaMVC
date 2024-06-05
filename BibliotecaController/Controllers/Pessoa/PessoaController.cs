@@ -15,6 +15,5 @@ namespace BibliotecaController.Controllers.Pessoa
         public PessoaController(string conexao) : base(conexao)
         {
         }
-
     }
 }
