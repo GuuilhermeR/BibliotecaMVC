@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaController\BibliotecaController.csproj">
+      <Project>{64253289-7a0e-4b3d-8f32-7ac2f2ae7942}</Project>
+      <Name>BibliotecaController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaModel\BibliotecaModel.csproj">
+      <Project>{b3780692-5178-4071-ba10-ba454a9e9386}</Project>
+      <Name>BibliotecaModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

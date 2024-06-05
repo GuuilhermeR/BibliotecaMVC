@@ -41,21 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Usuario\PessoaController.cs" />
+    <Compile Include="Controllers\Pessoa\PessoaController.cs" />
     <Compile Include="DAO.cs" />
+    <Compile Include="IDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\Livro\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BibliotecaModel\BibliotecaModel.csproj">
       <Project>{b3780692-5178-4071-ba10-ba454a9e9386}</Project>
       <Name>BibliotecaModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BibliotecaView\BibliotecaView.csproj">
-      <Project>{f36b4729-9cb1-4b42-80f2-aa2aaf893719}</Project>
-      <Name>BibliotecaView</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

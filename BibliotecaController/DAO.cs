@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaController
 {
-    public abstract class DAO<T> where T: class
+    public abstract class DAO<T,F> :IDAO<T,F> where T : class
     {
         public string Conexao { get; set; }
 
@@ -16,13 +16,24 @@ namespace BibliotecaController
             Conexao = conexao;
         }
 
-        protected abstract string GetSQL();
+        string IDAO<T, F>.GetSQL(T obj, F filtro)
+        {
+            throw new NotImplementedException();
+        }
 
-        protected abstract string Salvar(BibliotecaView.Views.Pessoa.Pessoa pessoa);
+        public string Salvar(T obj)
+        {
+            throw new NotImplementedException();
+        }
 
-        protected abstract string Excluir(BibliotecaView.Views.Pessoa.Pessoa pessoa);
+        public string Excluir(T obj)
+        {
+            throw new NotImplementedException();
+        }
 
-        protected abstract T CriarObjeto(SqlDataReader reader);
-
+        T IDAO<T, F>.CriarObjeto(SqlDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

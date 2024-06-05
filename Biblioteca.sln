@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaModel", "Bibliote
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaController", "BibliotecaController\BibliotecaController.csproj", "{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaView", "BibliotecaView\BibliotecaView.csproj", "{F36B4729-9CB1-4B42-80F2-AA2AAF893719}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64253289-7A0E-4B3D-8F32-7AC2F2AE7942}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F36B4729-9CB1-4B42-80F2-AA2AAF893719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F36B4729-9CB1-4B42-80F2-AA2AAF893719}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F36B4729-9CB1-4B42-80F2-AA2AAF893719}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F36B4729-9CB1-4B42-80F2-AA2AAF893719}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

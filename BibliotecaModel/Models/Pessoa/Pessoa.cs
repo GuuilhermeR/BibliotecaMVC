@@ -87,7 +87,7 @@ namespace BibliotecaView.Views.Pessoa
             } 
         }
 
-        public Pessoa(){}
+        public Pessoa() { }
 
         public Pessoa(string nome, string sobrenome, string cpf, string endereco, DateTime dataCadastro, int numero, string cidade, string estado, string bairro, string telefone, DateTime dataNascimento)
         {
