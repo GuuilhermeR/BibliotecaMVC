@@ -84,6 +84,10 @@
       <Project>{64253289-7a0e-4b3d-8f32-7ac2f2ae7942}</Project>
       <Name>BibliotecaController</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BibliotecaDAO\BibliotecaDAO.csproj">
+      <Project>{535492e2-e979-4a68-aad6-2dd58ded1129}</Project>
+      <Name>BibliotecaDAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BibliotecaModel\BibliotecaModel.csproj">
       <Project>{b3780692-5178-4071-ba10-ba454a9e9386}</Project>
       <Name>BibliotecaModel</Name>

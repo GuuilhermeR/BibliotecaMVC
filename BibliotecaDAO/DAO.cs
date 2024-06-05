@@ -6,13 +6,14 @@ using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaDAO
+namespace BibliotecaController
 {
     public abstract class DAO<T, F> : IDAO<T, F> where T : class
     {
         private string _conexao { get; set; }
         private string _tableName { get; set; }
         private System.Reflection.PropertyInfo[] _properties { get; set; }
+        private System.Reflection.PropertyInfo[] _propertiesFilter { get; set; }
 
         public string Conexao
         {
@@ -36,10 +37,11 @@ namespace BibliotecaDAO
         {
             _conexao = conexao;
             _tableName = typeof(T).Name;
-            _properties = typeof(T).GetType().GetProperties();
+            _properties = typeof(T).GetProperties();
+            _propertiesFilter = typeof(F).GetProperties();
         }
 
-        public string GetSQL(T obj, F filtro)
+        public virtual string GetSQL(T obj, F filtro)
         {
             string sql = string.Empty;
 
@@ -55,7 +57,7 @@ namespace BibliotecaDAO
 
             if (sql.StartsWith("SELECT"))
             {
-                sql += $"FROM {this.TableName}";
+                sql += $"FROM {this.TableName}\n";
 
                 if (filtro != null)
                 {
@@ -74,7 +76,7 @@ namespace BibliotecaDAO
         {
             string whereClause = string.Empty;
 
-            foreach (var property in this._properties)
+            foreach (var property in this._propertiesFilter)
             {
                 var value = property.GetValue(filtro);
                 if (value != null)
@@ -90,7 +92,7 @@ namespace BibliotecaDAO
             return whereClause.ToString();
         }
 
-        public string Salvar(T obj)
+        public virtual string Salvar(T obj)
         {
             string mensagem = string.Empty;
             string sqlcmd = string.Empty;
@@ -113,38 +115,38 @@ namespace BibliotecaDAO
         private string ComandoInsert(T obj)
         {
             string sqlcmd = $"INSERT INTO {this.TableName} (";
-            for (int i = 0; i <= _properties.Length; i++)
+            for (int i = 0; i < _properties.Length; i++)
             {
-                if (i == _properties.Length)
-                {
-                    sqlcmd += $"{_properties[i].Name})";
-                    continue;
-                }
-                sqlcmd += $"{_properties[i].Name},";
+                sqlcmd += $"{_properties[i].Name}";
+
+                if (i < _properties.Length - 1)
+                    sqlcmd += ", ";
+                else
+                    sqlcmd += ")";
             }
 
             sqlcmd += " \nVALUES (";
 
-            for (int i = 0; i <= _properties.Length; i++)
+            for (int i = 0; i < _properties.Length; i++)
             {
                 switch (_properties[i].PropertyType.Name)
                 {
                     case "String":
                         sqlcmd += $"'{_properties[i].GetValue(obj)}'";
                         break;
+                    case "DateTime":
+                        sqlcmd += $"'{Convert.ToDateTime(_properties[i].GetValue(obj)):yyyy-MM-dd}'";
+                        break;
                     default:
                         sqlcmd += $"{_properties[i].GetValue(obj)}";
                         break;
                 }
 
-                if (i < _properties.Length)
-                {
+                if (i < _properties.Length - 1)
                     sqlcmd += ", ";
-                }
                 else
-                {
                     sqlcmd += ")";
-                }
+
             }
 
             return sqlcmd;
@@ -153,9 +155,9 @@ namespace BibliotecaDAO
         private string ComandoUpdate(T obj)
         {
             string condictions = "";//GetWhereClause(filtro);
-            string sqlcmd = $"UPDATE {this.TableName} SET";
+            string sqlcmd = $"UPDATE {this.TableName} SET ";
 
-            for (int i = 0; i <= _properties.Length; i++)
+            for (int i = 0; i < _properties.Length; i++)
             {
                 sqlcmd += $"{_properties[i].Name}=";
 
@@ -164,18 +166,17 @@ namespace BibliotecaDAO
                     case "String":
                         sqlcmd += $"'{_properties[i].GetValue(obj)}'";
                         break;
+                    case "DateTime":
+                        sqlcmd += $"'{Convert.ToDateTime(_properties[i].GetValue(obj)):yyyy-MM-dd}'";
+                        break;
                     default:
                         sqlcmd += $"{_properties[i].GetValue(obj)}";
                         break;
                 }
 
-                if (i < _properties.Length)
+                if (i < _properties.Length - 1)
                 {
                     sqlcmd += ", ";
-                }
-                else
-                {
-                    sqlcmd += ")";
                 }
             }
 
@@ -187,12 +188,12 @@ namespace BibliotecaDAO
             return sqlcmd;
         }
 
-        public string Excluir(T obj)
+        public virtual string Excluir(T obj)
         {
             throw new NotImplementedException();
         }
 
-        public T CriarObjeto(SqlDataReader reader)
+        public virtual T CriarObjeto(SqlDataReader reader)
         {
             throw new NotImplementedException();
         }

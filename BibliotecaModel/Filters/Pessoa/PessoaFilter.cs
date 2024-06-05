@@ -8,5 +8,7 @@ namespace BibliotecaFilter.Filters.Pessoa
 {
     public class PessoaFilter
     {
+        public string Cpf { get; set; }
+
     }
 }

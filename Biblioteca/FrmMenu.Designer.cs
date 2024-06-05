@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCadastrarLivro = new System.Windows.Forms.Button();
-            this.btnCadUsuario = new System.Windows.Forms.Button();
+            this.btnCadPessoa = new System.Windows.Forms.Button();
             this.btnReservarLivro = new System.Windows.Forms.Button();
             this.btnCancelarReserva = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,14 +43,15 @@
             this.btnCadastrarLivro.Text = "Cadastrar Livro";
             this.btnCadastrarLivro.UseVisualStyleBackColor = true;
             // 
-            // btnCadUsuario
+            // btnCadPessoa
             // 
-            this.btnCadUsuario.Location = new System.Drawing.Point(455, 54);
-            this.btnCadUsuario.Name = "btnCadUsuario";
-            this.btnCadUsuario.Size = new System.Drawing.Size(220, 126);
-            this.btnCadUsuario.TabIndex = 1;
-            this.btnCadUsuario.Text = "Cadastrar Usuário";
-            this.btnCadUsuario.UseVisualStyleBackColor = true;
+            this.btnCadPessoa.Location = new System.Drawing.Point(455, 54);
+            this.btnCadPessoa.Name = "btnCadPessoa";
+            this.btnCadPessoa.Size = new System.Drawing.Size(220, 126);
+            this.btnCadPessoa.TabIndex = 1;
+            this.btnCadPessoa.Text = "Cadastrar Pessoa";
+            this.btnCadPessoa.UseVisualStyleBackColor = true;
+            this.btnCadPessoa.Click += new System.EventHandler(this.btnCadPessoa_Click);
             // 
             // btnReservarLivro
             // 
@@ -77,7 +78,7 @@
             this.ClientSize = new System.Drawing.Size(765, 450);
             this.Controls.Add(this.btnCancelarReserva);
             this.Controls.Add(this.btnReservarLivro);
-            this.Controls.Add(this.btnCadUsuario);
+            this.Controls.Add(this.btnCadPessoa);
             this.Controls.Add(this.btnCadastrarLivro);
             this.Name = "FrmMenu";
             this.Text = "Menu";
@@ -88,7 +89,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrarLivro;
-        private System.Windows.Forms.Button btnCadUsuario;
+        private System.Windows.Forms.Button btnCadPessoa;
         private System.Windows.Forms.Button btnReservarLivro;
         private System.Windows.Forms.Button btnCancelarReserva;
     }

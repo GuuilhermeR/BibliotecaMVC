@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaDAO
+namespace BibliotecaController
 {
     public interface IDAO <T, F> where T : class
     {
