@@ -1,4 +1,4 @@
-﻿using BibliotecaController.Controllers.Pessoa;
+﻿using BibliotecaDAO.Controllers.Pessoa;
 using BibliotecaFilter.Filters.Pessoa;
 using BibliotecaView.Views.Pessoa;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BibliotecaController.Controllers.Pessoa.PessoaController;
+using static BibliotecaDAO.Controllers.Pessoa.PessoaController;
 
 namespace Biblioteca
 {

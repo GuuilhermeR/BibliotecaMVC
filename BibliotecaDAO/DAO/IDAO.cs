@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaController
+namespace BibliotecaDAO
 {
     public interface IDAO <T, F> where T : class
     {
@@ -13,8 +13,8 @@ namespace BibliotecaController
 
         string Salvar(T obj);
 
-        string Excluir(T obj);
+        string Excluir(T obj, F filtro);
 
-        T CriarObjeto(SqlDataReader reader);
+        List<T> LoadObjeto(string sql);
     }
 }

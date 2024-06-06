@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO.cs" />
-    <Compile Include="IDAO.cs" />
+    <Compile Include="Comandos\InsertCommand.cs" />
+    <Compile Include="Comandos\UpdateCommand.cs" />
+    <Compile Include="DAO\DAO.cs" />
+    <Compile Include="DAO\IDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
